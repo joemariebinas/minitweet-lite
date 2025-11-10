@@ -1,0 +1,10 @@
+# Ignore vendor and node_modules
+backend/vendor/
+frontend/node_modules/
+
+# Environment files
+backend/.env
+frontend/.env
+
+# OS or editor files
+.DS_Store
