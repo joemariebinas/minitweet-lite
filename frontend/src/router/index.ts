@@ -26,4 +26,16 @@ const router = createRouter({
   routes
 })
 
+// Global Guard
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token');
+
+  if (to.meta.requiresAuth && !token) {
+    // User is not logged in, redirect to login
+    next('/');
+  } else {
+    next(); // allow access
+  }
+});
+
 export default router

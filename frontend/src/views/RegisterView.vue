@@ -119,7 +119,7 @@ const registerUser = async () => {
 
     // optionally redirect after 2s
     setTimeout(() => {
-      window.location.href = '/login'
+      window.location.href = '/'
     }, 2000)
   } catch (error) {
     console.error('❌ Error:', error)
