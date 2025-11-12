@@ -9,16 +9,15 @@ class Like extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'tweet_id',
-    ];
+    protected $fillable = ['user_id', 'tweet_id'];
 
-    public function tweet() {
-        return $this->belongsTo(Tweet::class);
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function user() {
-        return $this->belongsTo(User::class);
+    public function tweet()
+    {
+        return $this->belongsTo(Tweet::class);
     }
 }

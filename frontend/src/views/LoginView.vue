@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gray-50">
+  <div class="min-h-screen flex items-center justify-center bg-gray-50 font-poppins">
     <div class="w-full max-w-sm px-3 py-4 rounded-2xl">
       <h1 class="text-2xl font-bold text-center text-gray-900">Welcome to MiniTweet</h1>
       <p class="text-center text-gray-500 text-sm mt-2">
@@ -94,3 +94,15 @@ const handleLogin = async () => {
   }
 };
 </script>
+
+<style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+</style>

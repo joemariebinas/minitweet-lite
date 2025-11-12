@@ -13,7 +13,12 @@ Route::post('/register', [UserController::class, 'register']);
 // Login user
 Route::post('/login', [AuthController::class, 'login']);
 
+
+
 Route::middleware('auth:sanctum')->group(function () {
+
+    //Logout user
+    Route::post('/logout', [AuthController::class, 'logout']);
 
     // Get current logged-in user
     Route::get('/user', function (Request $request) {

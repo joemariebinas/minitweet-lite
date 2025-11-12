@@ -17,7 +17,8 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/feed',
     name: 'Feed',
-    component: FeedView
+    component: FeedView,
+    meta: { requiresAuth: true }
   }
 ]
 

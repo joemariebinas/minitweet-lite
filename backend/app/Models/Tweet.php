@@ -9,17 +9,15 @@ class Tweet extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'user_id',
-        'content',
-    ];
+    protected $fillable = ['user_id', 'content'];
 
-    // Relationships
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function likes() {
+    public function likes()
+    {
         return $this->hasMany(Like::class);
     }
 }

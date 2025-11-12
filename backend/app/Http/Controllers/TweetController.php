@@ -3,46 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tweet;
 
 class TweetController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Get all tweets
     public function index()
     {
-        //
+        $tweets = Tweet::with('user')
+            ->withCount('likes') // total likes
+            ->get()
+            ->map(function($tweet) {
+                // Check if current user liked this tweet
+                $tweet->liked_by_user = $tweet->likes()->where('user_id', auth()->id())->exists();
+                return $tweet;
+            });
+
+        return response()->json($tweets);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Create a new tweet
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'content' => 'required|string|max:280',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+        $tweet = Tweet::create([
+            'user_id' => auth()->id(),
+            'content' => $request->content,
+        ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+        $tweet->load('user');
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return response()->json($tweet);
     }
 }
