@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gray-50">
-    <div class="w-full max-w-sm px-6 py-8 bg-white rounded-2xl shadow-sm">
+    <div class="w-full max-w-sm px-3 py-4 rounded-2xl">
       <h1 class="text-2xl font-bold text-center text-gray-900">Welcome to MiniTweet</h1>
       <p class="text-center text-gray-500 text-sm mt-2">
         Connect with friends in 20 characters or less
@@ -34,12 +34,12 @@
         </button>
 
         <!-- Create Account -->
-        <button
-          type="button"
-          class="w-full border border-gray-300 text-gray-800 py-3 rounded-xl font-medium hover:bg-gray-100 transition"
-        >
-          Create Account
-        </button>
+        <router-link
+            to="/register"
+            class="block w-full border border-gray-300 text-center text-gray-800 py-3 rounded-xl font-medium hover:bg-gray-100 transition"
+          >
+            Create Account
+        </router-link>
       </form>
     </div>
   </div>
