@@ -3,10 +3,10 @@
 A mini Twitter-like app built with Laravel (backend) and Vue/React (frontend), and Tailwind CSS — allowing users to create accounts, post short tweets, and like/unlike posts.
 
 🧰 Tech Stack
-Backend     :	Laravel 11 (Sanctum for Auth), MySQL
-Frontend    :	Vue 3 + Vite
-Styling     :	Tailwind CSS
-Testing     :	PHPUnit/Pest (Laravel) + Jest/Vitest (Frontend)
+Backend    :	Laravel 11 (Sanctum for Auth), MySQL
+Frontend   :	Vue 3 + Vite
+Styling    :	Tailwind CSS
+Testing    :	PHPUnit/Pest (Laravel) + Jest/Vitest (Frontend)
 
 
 🏗️ Project Setup
