@@ -109,6 +109,7 @@ const registerUser = async () => {
     const response = await axios.post(API_URL, {
       firstname: form.value.firstname,
       surname: form.value.surname,
+      name: form.value.firstname + '' + form.value.surname,
       email: form.value.email,
       password: form.value.password
     })
